@@ -1,0 +1,148 @@
+#include <stdio.h>
+void myfun(int t);
+void myfun2();
+void myfun3(int ch);
+void myfun4(char name[10],int
+age);
+void myfun5(int urselection);
+struct hotel
+{
+ int t;
+};
+int main()
+{
+ int t;
+ struct hotel h;
+ int age;
+ char name[10];
+ int n;
+ int ph;
+ char p[10];
+ printf(" HOTEL
+MANAGEMENT");
+ printf("\n'One team,One dream'\n");
+ printf("Enter the time that customer arrived :\n");
+ scanf("%d",&t);
+ myfun(t);
+ myfun2();
+ int ch;
+ printf("Enter 1 for room allocation or Enter 0 for not alloacting the room \n");
+ scanf("%d",&ch);
+ myfun3(ch);
+ printf("Customer Details :\n");
+ printf("Enter name :\n");
+ scanf("%s",name);
+ printf("Enter age :\n");
+ scanf("%d",&age);
+ myfun4(name,age);
+ int urselection;
+ printf("Select the room that Hotelallotted :\n1.Double bedroom\n2.Single bedroom\n3.Deluxe\n4.Super deluxe\n5.Luxury\n");
+ scanf("%d",&urselection);
+ myfun5(urselection);
+ return 0;
+}
+void myfun(int t)
+{
+ if(t>0 && t<9)
+   printf("Yes, Room allocation can be done.\n");
+ else if(t>=9 && t<=12)
+ printf("Yes, Room allocation can be done.\n");
+ else if(t>12 && t<=14)
+ printf("It's lunch time, Room allocation is done after lunch.\n");
+ else if(t>14 && t<=20)
+ printf("Yes, Room allocation can be done.\n");
+else if(t>20 && t<=21)
+ printf("It's dinner time, Room allocation is done after dinner.\n");
+ else if(t>21 && t<=23)
+ printf("Yes, Room allocation can be done.\n");
+ else
+ printf("Invalid Format\n");
+}
+void myfun2()
+{
+ int choice;
+ printf("Select any room from below list :\n");
+ printf("1.Double bedroom\n2.Single bedroom\n3.Deluxe\n4.Super deluxe\n5.Luxury\n");
+scanf("%d",&choice);
+ switch(choice)
+ {
+ case 1:
+ printf("two beds \n 
+   amount per day = Rs.850/-\n");
+ break;
+ case 2:
+ printf("one bed with sofa \n 
+   amount per day = Rs.500/-\n");
+ break;
+ case 3:
+ printf("two beds with food \n
+amount per day = Rs.1000/-\n");
+ break;
+ case 4:
+printf("two beds with extra bed and food \n 
+  amount per day = Rs.1500/-\n");
+ break;
+ case 5:
+ printf("two beds with extra service \n 
+   amount per day = Rs.3000\n");
+
+ }
+}
+void myfun3(int ch)
+{
+ if(ch == 1)
+ {
+ printf("Room is allotted\n");
+}
+ else
+ {
+ printf("Room is not allotted\n");
+ }
+}
+void myfun4(char name[10],int age)
+{
+printf("Name of the customer:%s\n",name);
+printf("Age of the customer:%d\n",age);
+}
+void myfun5(int urselection)
+{
+ int bill;
+ printf("Enter restaurant bill :\n");
+ scanf("%d",&bill);
+ int days;
+printf("Enter number of days stayed in hotel room :\n");
+ scanf("%d",&days);
+ if(urselection==1)
+ {
+ days= 850*days;
+ printf("Total hotel bill :%d\n",days);
+ printf("Total stay bill : %d + %d= %d",days,bill,bill + days);
+ }
+ else if(urselection==2)
+ {
+ days= 500*days;
+ printf("Total hotel bill :%d\n",days);
+ printf("Total stay bill : %d + %d = %d",days,bill,bill + days);
+ }
+ else if(urselection==3)
+ {
+ days= 1000*days;
+ printf("Total hotel bill :
+%d\n",days);
+ printf("Total stay bill : %d + %d = %d",days,bill,bill + days);
+ }
+ else if(urselection==4)
+ {
+ days= 1500*days;
+ printf("Total hotel bill :%d\n",days);
+ printf("Total stay bill : %d + %d= %d",days,bill,bill + days);
+ }
+16
+ else if(urselection==5)
+ {
+ days= 3000*days;
+ printf("Total hotel bill :
+%d\n",days);
+ printf("Total stay bill : %d + %d = %d",days,bill,bill + days);
+ }
+}
